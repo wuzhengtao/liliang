@@ -87,18 +87,14 @@
     <script src="./libs/layui-v2.5.4/layui/layui.js"></script>
     <script>
         //JavaScript代码区域
-        layui.use('element', function () {
-            var element = layui.element;
-
-        });
-
-        layui.use('table', function () {
-            var table = layui.table;
+        layui.use(['element', 'table'], function () {
+            var element = layui.element
+                , table = layui.table;
 
             //第一个实例
             table.render({
                 elem: '#demo'
-                , height: 312
+                //, height: 500
                 //, url: '/data/demo' //数据接口
                 , data: [
                     {
@@ -474,6 +470,8 @@
                     , { field: 'classify', title: '职业', width: 80 }
                     , { field: 'wealth', title: '财富', width: 135, sort: true }
                 ]]
+                , toolbar: 'default'
+                , defaultToolbar: ['filter', 'print', 'exports']
             });
 
         });
